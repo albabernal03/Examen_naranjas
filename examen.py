@@ -96,7 +96,6 @@ def sectores_naranjas(df): #nos muestra un diagrama de sectores divididos en tre
 print(sectores_naranjas(Naranjas()))
 
 def barras_naranjas(df):
-    fig, ax = plt.subplots()
     plt.figure(figsize=(10,5))
     sns.countplot(df['naranjas'])
     plt.title('Diagrama de barras:', color= 'black')
@@ -105,7 +104,7 @@ def barras_naranjas(df):
     plt.xticks(rotation=90, fontsize=8)
     plt.plot()
     plt.show()
-    fig.savefig('graficos_img/barras_naranjas.png')  
+    plt.savefig('graficos_img/barras_naranjas.png')  
 print(barras_naranjas(Naranjas()))
 
 #crea una funcion que muestre una grafica de dispersión de los datos
