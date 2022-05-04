@@ -12,11 +12,10 @@ import seaborn as sns
 
 
 def Naranjas():
-    naranjas = np.random.randint(100, 230, 100)
-    df = pd.DataFrame(naranjas, columns=['naranjas'])
-    df.dropna(inplace=True)
+    df= pd.DataFrame(np.random.randint(100, 230, 100), columns=['naranjas'])
+    df = df.dropna()
     df.sort_values(by=['naranjas'], inplace=True)
-    df.to_csv('naranjas.csv')
+    df.to_csv('naranjas.csv', index= False)
     df= pd.read_csv('naranjas.csv')
     return df
 print(Naranjas())
@@ -97,22 +96,24 @@ def sectores_naranjas(df): #nos muestra un diagrama de sectores divididos en tre
     plt.show()
     #guardamos el gráfico en la carpeta graficos_img
     fig.savefig('graficos_img/sectores_naranjas.png')
-
-
 print(sectores_naranjas(Naranjas()))
 
 def barras_naranjas(df):
-    #Función que dibuja un diagrama de barras con los porcentajes de naranjas de cada sector
-    fig, ax = plt.subplots()
-    df.groupby('naranjas').plot(kind = 'bar', ax= ax)
-    ax.set_title('Diagrama de barras', loc = "center", fontdict = {'fontsize':14, 'fontweight':'bold', 'color':'tab:blue'})
-    ax.set_xlabel('')
-    # Ponemos una rejilla
-    ax.grid(axis = 'y', color = 'lightgray', linestyle = 'dashed')
+    plt.figure(figsize=(10,5))
+    sns.countplot(df['naranjas'])
+    plt.title('Diagrama de barras:', color= 'white')
+    plt.xlabel('Peso')
+    plt.ylabel('Naranjas')
+    plt.plot()
     plt.show()
-    #guardamos el gráfico 
-    fig.savefig('graficos_img/barras_naranjas.png')
-
-
-
+    plt.savefig('graficos_img/barras_naranjas.png')
 print(barras_naranjas(Naranjas()))
+
+
+
+
+
+
+
+
+
