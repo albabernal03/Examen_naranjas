@@ -1,34 +1,26 @@
-#haz un dataframe con una funcion que tenga una variable llamada naranjas y tenga 100 lineas con valores entre 100 y 230
-#limpia el dataframe
-#ordena los datos de menor a mayor y lo guardas en un csv
-#abre el archivo csv y guardalo en un dataframe
-#imprime el dataframe
 
-
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
+import pandas as pd #utilizamos pandas para crear un dataframe con los datos de las naranjas
+import numpy as np #es una biblioteca que utilizamos para funciones matemáticas
+import matplotlib.pyplot as plt #utilizamos matplotlib para crear un gráfico
+import seaborn as sns #utilizamos seaborn para crear un gráfico
 
 
 def Naranjas():
     df= pd.DataFrame(np.random.randint(100, 230, 100), columns=['naranjas'])
-    df = df.dropna()
+    df = df.dropna() #eliminamos los valores nulos con dropna
     df.sort_values(by=['naranjas'], inplace=True)
     df.to_csv('naranjas.csv', index= False)
     df= pd.read_csv('naranjas.csv')
     return df
 print(Naranjas())
 
-#haz una función que haga la media de los datos
 
 
 def media(df):
-    media = df['naranjas'].mean()
+    media = df['naranjas'].mean() #con ayuda de pandas calculamos la media utilizando la función mean
     return media
 print('La media es:', media(Naranjas()))
 
-#haz una función que haga la desviación típica de los datos
 
 
 def desviacion(df):
@@ -36,7 +28,6 @@ def desviacion(df):
     return desviacion
 print('La desviación típica es:', desviacion(Naranjas()))
 
-#haz una función que haga la mediana de los datos
 
 
 def mediana(df):
@@ -44,7 +35,7 @@ def mediana(df):
     return mediana
 print('La mediana es:', mediana(Naranjas()))
 
-#haz una función que haga la moda de los datos
+
 
 
 def moda(df):
@@ -52,10 +43,6 @@ def moda(df):
     return moda
 print('La moda es:', moda(Naranjas()))
 
-#haz una funcion que calcule los cuartiles de los datos
-#el cuartil 1 es el 25%
-#el cuartil 2 es el 50%
-#el cuartil 3 es el 75%
 
 
 def cuartiles(df):
@@ -65,7 +52,7 @@ def cuartiles(df):
     return cuartil1, cuartil2, cuartil3
 print('Los cuartiles son:', cuartiles(Naranjas()))
 
-#haz una función que te diga cuantas naranjas pensan menos de 130
+
 
 
 def menos_130(df):
@@ -74,24 +61,20 @@ def menos_130(df):
 print(f'Hay {menos_130(Naranjas())} naranjas que pensan menos de 130')
 
 
-def sectores_naranjas(df): #nos muestra un diagrama de sectores divididos en tres sectores
-    #Función que dibuja un diagrama de sectores con los porcentajes de naranjas de cada sector
-    #Definimos a figura y los ejes del gráfico
+
+def sectores_naranjas(df):
     fig, ax = plt.subplots()
-    #Definimos los sectores
     sectores = ['<130', '130', '>130']
-    #Definimos los porcentajes de naranjas de cada sector
     porcentajes = [df['naranjas'][df['naranjas'] < 130].count()/df['naranjas'].count()]
     porcentajes.append(df['naranjas'][(df['naranjas'] == 130)].count()/df['naranjas'].count())
     porcentajes.append(df['naranjas'][(df['naranjas'] > 130)].count()/df['naranjas'].count())
-    #Dibujamos el diagrama de sectores
     ax.pie(porcentajes, labels=sectores, autopct='%1.1f%%', startangle=90)
     plt.title('Diagrama sectores:', color= 'white')
-    #Mostramos el gráfico
     plt.show()
-    #guardamos el gráfico en la carpeta graficos_img
     fig.savefig('graficos_img/sectores_naranjas.png')
 print(sectores_naranjas(Naranjas()))
+
+
 
 def barras_naranjas(df):
     plt.figure(figsize=(10,5))
@@ -105,7 +88,6 @@ def barras_naranjas(df):
     plt.close()
 print(barras_naranjas(Naranjas()))
 
-#crea una funcion que muestre una grafica de dispersión de los datos
 
 
 def dispersión(df):
