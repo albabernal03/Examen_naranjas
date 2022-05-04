@@ -102,9 +102,8 @@ def barras_naranjas(df):
     plt.xlabel('Peso')
     plt.ylabel('Naranjas')
     plt.xticks(rotation=90, fontsize=8)
-    plt.plot()
-    plt.show()
     plt.savefig('graficos_img/barras_naranjas.png')  
+    plt.show()
     plt.close()
 print(barras_naranjas(Naranjas()))
 
