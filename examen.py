@@ -77,8 +77,6 @@ print(f'Hay {menos_130(Naranjas())} naranjas que pensan menos de 130')
 def sectores_naranjas(df): #nos muestra un diagrama de sectores divididos en tres sectores
     #Función que dibuja un diagrama de sectores con los porcentajes de naranjas de cada sector
     #Definimos a figura y los ejes del gráfico
-
-
     fig, ax = plt.subplots()
     #Definimos los sectores
     sectores = ['<130', '130', '>130']
