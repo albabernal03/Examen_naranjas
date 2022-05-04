@@ -15,7 +15,7 @@ def Naranjas():
     naranjas = np.random.randint(100, 230, 100)
     df = pd.DataFrame(naranjas, columns=['naranjas'])
     df.dropna(inplace=True)
-    df.sort_values(by='naranjas', inplace=True)
+    df.sort_values(by=['naranjas'], inplace=True)
     df.to_csv('naranjas.csv')
     df= pd.read_csv('naranjas.csv')
     return df
@@ -103,10 +103,16 @@ print(sectores_naranjas(Naranjas()))
 
 def barras_naranjas(df):
     #Función que dibuja un diagrama de barras con los porcentajes de naranjas de cada sector
-
-
     fig, ax = plt.subplots()
-    bins= range(0,200,20) 
+    df.groupby('naranjas').plot(kind = 'bar', ax= ax)
+    ax.set_title('Diagrama de barras', loc = "center", fontdict = {'fontsize':14, 'fontweight':'bold', 'color':'tab:blue'})
+    ax.set_xlabel('')
+    # Ponemos una rejilla
+    ax.grid(axis = 'y', color = 'lightgray', linestyle = 'dashed')
+    plt.show()
+    #guardamos el gráfico 
+    fig.savefig('graficos_img/barras_naranjas.png')
+
 
 
 print(barras_naranjas(Naranjas()))

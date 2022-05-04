@@ -1,0 +1,10 @@
+fig, ax = plt.subplots()
+    plt.hist(df['naranjas'], histtype ='bar', rwidth = 1.2, color = 'blue')
+    plt.title('Diagrama de barras:', color= 'white')
+    plt.xlabel('Peso')
+    plt.ylabel('Naranjas')
+    plt.plot()
+    plt.axvline(130, linestyle = 'dashed', color = 'red')
+    plt.show()
+    #guardamos el gráfico en la carpeta graficos_img
+    fig.savefig('graficos_img/barras_naranjas.png')
