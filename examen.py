@@ -86,9 +86,6 @@ def sectores_naranjas(df): #nos muestra un diagrama de sectores divididos en tre
     porcentajes = [df['naranjas'][df['naranjas'] < 130].count()/df['naranjas'].count()]
     porcentajes.append(df['naranjas'][(df['naranjas'] == 130)].count()/df['naranjas'].count())
     porcentajes.append(df['naranjas'][(df['naranjas'] > 130)].count()/df['naranjas'].count())
-  
-
-
     #Dibujamos el diagrama de sectores
     ax.pie(porcentajes, labels=sectores, autopct='%1.1f%%', startangle=90)
     plt.title('Diagrama sectores:', color= 'white')
@@ -107,9 +104,24 @@ def barras_naranjas(df):
     plt.xticks(rotation=90, fontsize=8)
     plt.plot()
     plt.show()
-    plt.savefig('graficos_img/barras_naranjas.png')
-   
+    plt.savefig('graficos_img/barras_naranjas.png')  
 print(barras_naranjas(Naranjas()))
+
+#crea una funcion que muestre una grafica de dispersión de los datos
+
+
+def dispersión(df):
+    df= pd.read_csv('naranjas.csv')
+    data=df['naranjas'].groupby(pd.cut(df['naranjas'], range(100,240,10))).count()
+    fig, ax = plt.subplots()
+    lista = []
+    for i in range(100,230,10):
+        lista.append(i)
+    plt.scatter(lista,data)
+    plt.title('Diagrama de dispersión:', color= 'black')         
+    plt.show()
+    plt.savefig('graficos_img/dispersion_naranjas.png')
+print(dispersión(Naranjas()))
 
 
 
