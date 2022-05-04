@@ -105,6 +105,7 @@ def barras_naranjas(df):
     plt.plot()
     plt.show()
     plt.savefig('graficos_img/barras_naranjas.png')  
+    plt.close()
 print(barras_naranjas(Naranjas()))
 
 #crea una funcion que muestre una grafica de dispersión de los datos
