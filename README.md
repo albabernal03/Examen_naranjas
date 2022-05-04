@@ -119,3 +119,6 @@ def dispersión(df):
 print(dispersión(Naranjas()))
 
 ```
+***
+
+<h2>Explicación paso a paso del código:</h2>
