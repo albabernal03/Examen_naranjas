@@ -101,12 +101,14 @@ print(sectores_naranjas(Naranjas()))
 def barras_naranjas(df):
     plt.figure(figsize=(10,5))
     sns.countplot(df['naranjas'])
-    plt.title('Diagrama de barras:', color= 'white')
+    plt.title('Diagrama de barras:', color= 'black')
     plt.xlabel('Peso')
     plt.ylabel('Naranjas')
+    plt.xticks(rotation=90, fontsize=8)
     plt.plot()
     plt.show()
     plt.savefig('graficos_img/barras_naranjas.png')
+   
 print(barras_naranjas(Naranjas()))
 
 
