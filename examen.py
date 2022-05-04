@@ -120,7 +120,7 @@ def dispersión(df):
     plt.scatter(lista,data)
     plt.title('Diagrama de dispersión:', color= 'black')         
     plt.show()
-    plt.savefig('graficos_img/dispersion_naranjas.png')
+    fig.savefig('graficos_img/dispersion_naranjas.png')
 print(dispersión(Naranjas()))
 
 
