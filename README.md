@@ -122,3 +122,6 @@ print(dispersión(Naranjas()))
 ***
 
 <h2>Explicación paso a paso del código:</h2>
+
+**Pasos:**
+1. En primer lugar importamos las librerías que necesitamos para desarrollar el programa, en esta ocasión hemos importado las siguientes librerias:
