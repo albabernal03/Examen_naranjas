@@ -164,3 +164,20 @@ print(dispersión(Naranjas()))
 ***
        
  <h2>Explicación diagramas:</h2>
+
+**====¿Para qué sirve cada diagrama?====**
+
+**Diagrama de barras:**
+
+Cómo todos los diagramas, el diagram de barras sirve para ilustrar una serie de datos para su mejor entendimiento. En primer lugar aplicado a este ejemplo podemos omservar cuales es el peso más repetido en las naranjas y así conocer su moda. Básicamente nos ayuda a la comparación.
+
+**Diagrama de sectores:**
+
+El diagrama de sectores nos proporciona la frecuencia en la que se da cada condición; aplicado a esta tarea el nuestro nos muestra el porcentaje de narajas que pesan menos de 130 gramos, 130 gramos y más de 130 gramos.
+
+**Diagrama de dispersión:**
+
+El diagrama de dispersión nos ayuda a mostrar como dos variables se relacionan entre sí. A través de esta gráfica podemos mostrar una linea de tendencia que nos indica que relación se establece entre ambas variables: positiva, negativa o sin relacion. En nuestro ejemplo las os variables que comparamos son cantidad y peso.
+
+***
+
