@@ -146,9 +146,20 @@ print(dispersión(Naranjas()))
 
 **5.** Por último creamos los distintos diagramas.
        
-       -Diagrama de sectores: utilizamos la librería Matplotlib
-       -Diagrma de barras: utilizamos dos librerías: Matplotlib y Seaborn
-       -Diagrama de dispersión: utilizamos la libreía Matplotlib
+       -Diagrama de sectores: utilizamos la librería Matplotlib. Dentro de esta función encontramos uso de diversas funciones como son:
+       
+                              *ax.pie(): se utiliza para trazar gráficos circulares.
+                              *plt.subplots(): es una función que devuelve una tupla que contiene una figura y objeto (s) de ejes. Por lo tanto, al usar fig, ax = plt.subplots() descomprime esta tupla en las variables fig y ax. Teniendo fig es útil si desea cambiar los atributos a nivel de figura o guardar la figura como un archivo de imagen más tarde (por ejemplo, con fig.savefig('yourfilename.png')).
+                              *plt.title(): lo utlizamos para especificar el título de la visualización representada.
+    
+       -Diagrma de barras: utilizamos dos librerías: Matplotlib y Seaborn.
+                           
+                           *sns.countplot(): se usa para mostrar los conteos de observaciones en cada contenedor categórico usando barras.
+                             
+       
+       -Diagrama de dispersión: utilizamos la libreía Matplotlib.
+       
+                                *plt.scatter(): se usa para crear diagramas de dispersión
 
 ***
        
