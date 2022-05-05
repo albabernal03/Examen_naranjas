@@ -154,12 +154,12 @@ print(dispersión(Naranjas()))
     
        -Diagrma de barras: utilizamos dos librerías: Matplotlib y Seaborn.
                            
-                           *sns.countplot(): se usa para mostrar los conteos de observaciones en cada contenedor categórico usando barras.
+                              *sns.countplot(): se usa para mostrar los conteos de observaciones en cada contenedor categórico usando barras.
                              
        
        -Diagrama de dispersión: utilizamos la libreía Matplotlib.
        
-                                *plt.scatter(): se usa para crear diagramas de dispersión
+                               *plt.scatter(): se usa para crear diagramas de dispersión
 
 ***
        
