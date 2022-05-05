@@ -163,3 +163,4 @@ print(dispersión(Naranjas()))
 
 ***
        
+ <h2>Explicación diagramas:</h2>
